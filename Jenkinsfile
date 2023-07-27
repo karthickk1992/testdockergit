@@ -1,15 +1,11 @@
 pipeline {
-  agent { Dockerfile true } // Use Dockerfile as the agent for the pipeline
-
-  stages {
-    stage('Test') {
-      steps {
-        sh '''
-          curl --version // Check the version of curl
-          node --version // Check the version of Node.js
-          npm --version  // Check the version of npm
-        '''
-      }
+    agent { dockerfile true }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+                sh 'svn --version'
+            }
+        }
     }
-  }
 }
