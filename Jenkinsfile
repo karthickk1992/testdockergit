@@ -1,5 +1,5 @@
 pipeline {
-  agent { dockerfile true } // Use Dockerfile as the agent for the pipeline
+  agent { Dockerfile true } // Use Dockerfile as the agent for the pipeline
 
   stages {
     stage('Test') {
