@@ -1,12 +1,6 @@
-pipeline {
-    agent {
-        docker { image 'node:18.16.0-alpine' }
-    }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-            }
-        }
-    }
+stage('Build Docker Image') {  
+    steps{                     
+    sh 'docker-compose build'     
+    echo 'Docker-compose-build Build Image Completed'                
+    }           
 }
