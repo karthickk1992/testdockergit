@@ -1,3 +1,8 @@
+FROM jenkins
+COPY plugins.txt /usr/share/jenkins/plugins.txt
+RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
+
+
 FROM node:19-alpine
 
 # Create app directory
@@ -17,3 +22,5 @@ EXPOSE 3000
 
 # Run the app
 CMD [ "node", "index.js" ]
+
+
