@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp
+  name: myapps
 spec:
   selector:
-    app: myapp
+    app: myapps
   ports:
     - port: 80
       targetPort: 3000
